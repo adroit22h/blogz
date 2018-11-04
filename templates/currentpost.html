@@ -1,0 +1,49 @@
+
+{% extends "layouts/mainLayout.html" %}
+
+{% block  content %}
+<section id="new_blog_post">
+    <form name="newPost" action="#" method="POST">
+        
+        <section>
+                <label>Title for new blog</label>
+                <div>
+                        <input name="title" type="text" value="{{title}}"/>
+                </div>
+                {% if errors['title'] is defined %}
+                    <small>
+                        Please fill in a title
+                    </small>                
+                
+                {% endif %}
+
+        </section>
+       
+
+        <section>
+            
+            <label>Your new Post</label>
+            <div>
+                    <textarea name="body">{{body}}</textarea>
+            </div>
+            {% if errors['body'] is defined %}
+            <small>
+                Please fill the body for the post
+            </small>                
+        
+        {% endif %}
+
+        </section>
+
+
+        <input type="submit" value="Add Entry"/>
+
+
+
+    </form>
+
+
+
+</section>
+
+{% endblock  content %}

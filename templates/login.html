@@ -1,0 +1,33 @@
+
+{% extends 'layouts/main.html' %}
+
+
+
+{% block content  %}
+
+<form name="login" action="/login" method="POST">
+    {% if failed is defined and failed==True %}
+    <small>
+       Failed Authentication
+    </small>                
+                
+    {% endif %}
+    <div>
+        <label>Enter Username</label><br>
+        <input type="text" name="username" value="">
+        
+    </div>
+    
+    <div>
+        <label>Enter Password</label><br>
+        <input type="password" name="password" value="">
+    </div>
+
+    <input type="submit" value="Sign In">
+</form>
+
+
+
+
+{% endblock  %}
+

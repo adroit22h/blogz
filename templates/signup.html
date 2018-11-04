@@ -1,0 +1,81 @@
+
+{% extends 'layouts/main.html' %}
+
+
+
+{% block content  %}
+
+<div>
+    {{ validate }}
+        <h2>Sign Up</h2>
+    
+        <form action="/signup" id="SignUp" method="POST">
+    
+                <table>
+            <tr>
+                    <td>
+                        <label for="userName">User Name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="username" id="userName" value={{username}}> 
+                            {% if validate['username'] is defined %}
+                            <span>Invalid Username</span>
+                            {% endif %}
+
+                            {% if validate['userExist'] is defined %}
+                            <span> Sorry User Exist</span>
+                            {% endif %}
+                    </td>
+                    <td>
+                            
+
+                    </td>
+            </tr>
+    
+            <tr>
+                        <td>
+                            <label for="password">Password</label>
+                        </td>
+                        <td>
+                            <input type="text" name="password" id="password"> 
+                            {% if  validate['password'] is defined %}
+                            
+                            <span>Invalid Password</span>
+    
+                            {% endif %}
+                        </td>
+                        
+            </tr>
+    
+            <tr>
+                    <td>
+                            <label for="password_verify">Verify Password</label>
+                        </td>
+                        <td>
+                            <input type="text" name="password_verify" id="password_verify"> 
+                            {% if  validate['password_verify'] is defined %}
+                            <span>Please confirm Password</span>
+                            {% endif %}
+                        </td>
+            </tr>
+    
+            
+        </table>       
+        <input type="submit"> 
+            
+    
+    
+    
+    
+            
+        </form>
+    
+    
+    
+    </div>
+
+
+
+
+{% endblock  %}
+

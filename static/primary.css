@@ -1,0 +1,19 @@
+#main{
+    display:block;
+}
+
+.post{  
+    box-sizing:border-box;
+    margin:25px auto;
+    border:2px outset gainsboro;
+    padding:0px;
+}
+
+.post h1{
+    padding:5px;
+    background: paleturquoise;
+}
+.post p{
+    padding:5%;
+    text-align: left;
+}

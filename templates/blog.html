@@ -1,0 +1,21 @@
+
+{% extends "layouts/main.html" %}
+
+{% block  content %}
+
+
+    {% for post in posts %}
+
+    <div class="post col-lg-10 text-center">
+
+        <h1><a href="post?postId={{post.id}}">{{post.Title}}</a></h1>
+        <p>{{post.Body}}</p>
+        <div><small>Post By: <a href="blog?user={{post.user_id}}">{{post.owner.username}}</a></small></div>
+
+    </div>
+
+
+
+    {% endfor %}
+
+{% endblock  content %}
